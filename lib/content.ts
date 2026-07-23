@@ -23,7 +23,10 @@ export type Credential = {
   claim: string;
   body: string;
   proof: string[];
+  /** Used as a fill (the rule); no text-contrast requirement. */
   accent: string;
+  /** Same hue, darkened for use as text on white. */
+  accentInk: string;
 };
 
 export const CREDENTIALS: Credential[] = [
@@ -38,6 +41,7 @@ export const CREDENTIALS: Credential[] = [
       "Search, Shopping, PMax, Display, YouTube",
     ],
     accent: "var(--p-mail)",
+    accentInk: "var(--p-mail-ink)",
   },
   {
     title: "LinkedIn Ads",
@@ -50,6 +54,7 @@ export const CREDENTIALS: Credential[] = [
       "Devoteam: 3× leads, −43% CPL",
     ],
     accent: "var(--p-meet)",
+    accentInk: "var(--p-meet-ink)",
   },
   {
     title: "Agency management",
@@ -62,6 +67,7 @@ export const CREDENTIALS: Credential[] = [
       "Ships own products: adsfellow.app, b2blast.com",
     ],
     accent: "var(--p-pass)",
+    accentInk: "var(--p-pass-ink)",
   },
   {
     title: "Product alignment",
@@ -74,6 +80,7 @@ export const CREDENTIALS: Credential[] = [
       "Based in Barcelona already",
     ],
     accent: "var(--p-vpn)",
+    accentInk: "var(--p-vpn-ink)",
   },
 ];
 
@@ -314,6 +321,7 @@ export type Campaign = {
   channels: string[];
   kpi: string;
   accent: string;
+  accentInk: string;
   demo?: { href: string; label: string };
 };
 
@@ -330,6 +338,7 @@ export const CAMPAIGNS: Campaign[] = [
     channels: ["Google Search — competitor and category", "LinkedIn — security titles"],
     kpi: "CPL and MQL-to-SQL rate",
     accent: "var(--p-mail)",
+    accentInk: "var(--p-mail-ink)",
     demo: { href: "/demo/legal", label: "Legal variant" },
   },
   {
@@ -344,6 +353,7 @@ export const CAMPAIGNS: Campaign[] = [
     channels: ["LinkedIn — media, legal, NGO", "Reddit", "Google Search"],
     kpi: "Pipeline value and win rate",
     accent: "var(--p-vpn)",
+    accentInk: "var(--p-vpn-ink)",
     demo: { href: "/demo/media", label: "Newsroom variant" },
   },
   {
@@ -358,6 +368,7 @@ export const CAMPAIGNS: Campaign[] = [
     channels: ["Google Search — high intent", "Meta — retargeting only"],
     kpi: "CAC and trial-to-paid rate",
     accent: "var(--p-drive)",
+    accentInk: "var(--p-drive-ink)",
     demo: { href: "/demo/compare", label: "Comparison page" },
   },
   {
@@ -372,6 +383,7 @@ export const CAMPAIGNS: Campaign[] = [
     channels: ["LinkedIn — security and legal", "Google Search", "Reddit"],
     kpi: "CPL and add-on attach rate",
     accent: "var(--p-lumo)",
+    accentInk: "var(--p-lumo-ink)",
     demo: { href: "/demo/startups", label: "Startup variant" },
   },
 ];
@@ -400,7 +412,7 @@ export const CHANNELS: Channel[] = [
     share: 30,
     role: "Create demand in the buying committee",
     why:
-      "The only platform with reliable firmographic and job-title targeting for a 10–500 seat B2B buyer. Expensive per lead, but the lead is the right person — which is what CPL alone never tells you.",
+      "The only platform with reliable firmographic and job-title targeting for a 10–500 seat B2B buyer. Dreamdata's 2026 benchmark study — 66M+ sessions across roughly 3,500 B2B companies — puts LinkedIn at 121% ROAS against Google Search at 67% and Meta at 51%. Expensive per lead, but the lead is the right person, which is what CPL alone never tells you.",
     accent: "var(--p-meet)",
   },
   {
@@ -445,56 +457,69 @@ export type Benchmark = {
  */
 export const BENCHMARKS: Benchmark[] = [
   {
+    metric: "Paid ROAS by channel, B2B",
+    value: "LinkedIn 121% · Google Search 67% · Meta 51%",
+    source:
+      "Dreamdata, LinkedIn Ads Benchmarks Report 2026 (Mar 2026) — 66M+ sessions across ~3,500 B2B companies",
+    confidence: "strong",
+  },
+  {
+    metric: "Search Ads CPC, all-industry median",
+    value: "$5.42 · Business Services $5.87",
+    source: "LocaliQ / WordStream search advertising benchmarks (2026)",
+    confidence: "strong",
+  },
+  {
     metric: "LTV:CAC ratio",
     value: "3:1 target, 5:1+ top quartile",
-    source: "Long-standing SaaS convention (Bessemer, a16z) — a rule of thumb, not a measured benchmark",
+    source:
+      "Long-standing SaaS convention (Bessemer, a16z) — a rule of thumb, not a measured benchmark",
     confidence: "strong",
   },
   {
     metric: "CAC payback period",
     value: "12–18 months",
-    source: "Consistent across multiple SaaS operating benchmarks; varies sharply by ACV",
+    source: "Consistent across SaaS operating benchmarks; varies sharply by ACV",
     confidence: "strong",
   },
   {
-    metric: "MQL → SQL conversion",
-    value: "20–30%",
-    source: "Widely reported range; depends entirely on how a company defines an MQL",
+    metric: "MQL → SQL conversion, B2B SaaS",
+    value: "13%",
+    source:
+      "First Page Sage (2026). Cybersecurity 15%, IT 14%. Far below the 20–30% repeated in most B2B decks",
     confidence: "medium",
   },
   {
-    metric: "LinkedIn Ads CPC, B2B",
-    value: "$5–$12",
-    source: "Aggregated advertiser benchmark reports; varies by geography and seniority targeted",
+    metric: "Cost per lead, B2B SaaS",
+    value: "$310 paid · $237 blended",
+    source:
+      "First Page Sage (2026) — headline figure is credible, but the methodology behind it is not published",
     confidence: "medium",
   },
   {
-    metric: "Google Search CPC, B2B software",
-    value: "$3–$12",
-    source: "Search advertising benchmark reports; competitor terms sit well above this",
-    confidence: "medium",
+    metric: "LinkedIn Ads CPC, B2B SaaS",
+    value: "$10–$16",
+    source:
+      "HockeyStack Labs — a vendor's analysis of its own customer base, so it skews to well-funded advertisers",
+    confidence: "weak",
   },
   {
-    metric: "Reddit Ads CPC",
-    value: "Under $1 typical",
-    source: "Reddit's own advertising material and practitioner reports",
-    confidence: "medium",
-  },
-  {
-    metric: "Self-serve trial → paid",
-    value: "15–25%",
-    source: "Product-led growth benchmark reports; heavily dependent on trial length and card-up-front",
-    confidence: "medium",
-  },
-  {
-    metric: "LinkedIn Ads CPL, B2B SaaS",
-    value: "$60–$150 top-funnel, $150–$450 bottom-funnel",
-    source: "Frequently quoted, rarely sourced to an original dataset — I would not forecast on this",
+    metric: "LinkedIn CPL, “$60–150 top-funnel”",
+    value: "Not used",
+    source:
+      "Quoted constantly, traceable to no original dataset. I checked and could not source it — so it is not in my forecast",
     confidence: "weak",
   },
 ];
 
 /* -------------------------------------- verified Proton facts (proton.me) */
+
+/** Launch dates verified against Proton's own announcements. */
+export const TIMELINE = [
+  { date: "31 March 2026", event: "Proton Workspace and Proton Meet launch" },
+  { date: "17 June 2026", event: "Easy Switch for Business launches" },
+  { date: "30 June 2026", event: "Lumo 2.0 ships on a new architecture" },
+] as const;
 
 export const PROTON_FACTS = {
   businesses: "100,000+",

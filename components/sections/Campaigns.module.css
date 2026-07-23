@@ -83,7 +83,7 @@
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--gray-400);
+  color: var(--gray-500);
 }
 
 .meta dd {

@@ -8,6 +8,10 @@
   max-width: 68ch;
 }
 
+.inner :global(.eyebrow) {
+  color: var(--cyan-300);
+}
+
 .title {
   margin-top: 14px;
   font-family: var(--font-serif);

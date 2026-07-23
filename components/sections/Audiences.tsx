@@ -1,4 +1,4 @@
-import { AUDIENCES, SEGMENT_STATS } from "@/lib/content";
+import { AUDIENCES, SEGMENT_STATS, TIMELINE } from "@/lib/content";
 import Reveal from "../Reveal";
 import SectionHead from "../SectionHead";
 import styles from "./Audiences.module.css";
@@ -25,6 +25,18 @@ export default function Audiences() {
           Proton&apos;s own published customer mix — the segments below follow
           where the customers already are.
         </p>
+
+        <Reveal className={styles.timeline}>
+          <span className={styles.timelineLabel}>Recent releases</span>
+          <ul>
+            {TIMELINE.map((t) => (
+              <li key={t.date}>
+                <time>{t.date}</time>
+                {t.event}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
 
         <div className={styles.grid}>
           {AUDIENCES.map((a, i) => (

@@ -23,7 +23,7 @@ export default function Campaigns() {
               className={styles.card}
             >
               <div className={styles.top}>
-                <span className={styles.n} style={{ color: c.accent }}>
+                <span className={styles.n} style={{ color: c.accentInk }}>
                   {c.n}
                 </span>
                 <h3 className={styles.headline}>{c.headline}</h3>

@@ -36,7 +36,9 @@
   --gray-700: #374151;
   --gray-900: #111827;
 
-  /* Product accents (from Proton's per-product brand colours) */
+  /* Product accents (from Proton's per-product brand colours).
+     These are tuned for fills — dots, rules, bar segments — where WCAG text
+     contrast does not apply. */
   --p-mail: #6d4aff;
   --p-calendar: #f5b83b;
   --p-drive: #eb5757;
@@ -44,6 +46,15 @@
   --p-pass: #9d76ff;
   --p-meet: #52c0e8;
   --p-lumo: #c3a2ff;
+
+  /* Darkened counterparts for the same accents used as TEXT on white, each
+     at or above 4.5:1. Same hue family, readable at 13px. */
+  --p-mail-ink: #5433d6;
+  --p-drive-ink: #c0392b;
+  --p-vpn-ink: #1f7a3d;
+  --p-pass-ink: #6438c9;
+  --p-meet-ink: #0e7490;
+  --p-lumo-ink: #7c3aed;
 
   /* Semantic */
   --bg: var(--white);

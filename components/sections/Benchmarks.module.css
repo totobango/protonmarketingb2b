@@ -26,7 +26,7 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--gray-400);
+  color: var(--gray-500);
   text-align: left;
   white-space: nowrap;
 }
@@ -80,7 +80,7 @@
 
 .strong {
   background: rgba(79, 191, 108, 0.13);
-  color: #2f8f4b;
+  color: #1f7a3d;
 }
 
 .medium {

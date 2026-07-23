@@ -26,7 +26,7 @@ export default function WhyMe() {
                 style={{ background: c.accent }}
                 aria-hidden="true"
               />
-              <p className={styles.claim} style={{ color: c.accent }}>
+              <p className={styles.claim} style={{ color: c.accentInk }}>
                 {c.claim}
               </p>
               <h3 className={styles.title}>{c.title}</h3>

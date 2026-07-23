@@ -24,9 +24,7 @@ export default function ChannelMix() {
                 key={c.name}
                 className={styles.barSeg}
                 style={{ flexGrow: c.share, background: c.accent }}
-              >
-                <span className={styles.barPct}>{c.share}%</span>
-              </span>
+              />
             ))}
           </div>
         </Reveal>

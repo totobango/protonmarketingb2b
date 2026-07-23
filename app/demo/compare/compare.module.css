@@ -93,12 +93,12 @@
 
 .yes {
   background: rgba(79, 191, 108, 0.14);
-  color: #2f8f4b;
+  color: #1f7a3d;
 }
 
 .no {
   background: var(--gray-100);
-  color: var(--gray-400);
+  color: var(--gray-500);
 }
 
 .facts {
@@ -121,7 +121,7 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--gray-400);
+  color: var(--gray-500);
 }
 
 .factValue {
