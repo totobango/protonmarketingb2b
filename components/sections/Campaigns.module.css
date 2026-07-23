@@ -1,0 +1,131 @@
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 28px 26px;
+  background: var(--white);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-card), var(--ring-card);
+  transition: transform 260ms var(--ease), box-shadow 260ms var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(31, 31, 35, 0.11), var(--ring-card);
+}
+
+.top {
+  display: flex;
+  align-items: baseline;
+  gap: 13px;
+}
+
+.n {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.14;
+  color: var(--purple-800);
+}
+
+.audience {
+  margin-top: 11px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--gray-500);
+}
+
+.insight {
+  margin-top: 16px;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-body);
+}
+
+.message {
+  margin: 20px 0 0;
+  padding: 3px 0 3px 16px;
+  border-left: 2.5px solid var(--purple-500);
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  color: var(--purple-800);
+}
+
+.meta {
+  display: grid;
+  gap: 13px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.meta > div {
+  display: grid;
+  gap: 4px;
+}
+
+.meta dt {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+}
+
+.meta dd {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--gray-700);
+}
+
+.demoLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 22px;
+  padding: 9px 16px;
+  align-self: flex-start;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-pill);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--purple-700);
+  transition: background-color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease);
+}
+
+.demoLink:hover {
+  background: var(--purple-100);
+  border-color: var(--purple-200);
+}
+
+.demoLink svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--t-fast) var(--ease);
+}
+
+.demoLink:hover svg {
+  transform: translateX(2px);
+}
+
+@media (min-width: 880px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

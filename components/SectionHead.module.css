@@ -1,0 +1,23 @@
+.head {
+  max-width: 62ch;
+  margin-bottom: 48px;
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.title {
+  margin-top: 14px;
+}
+
+.lead {
+  margin-top: 18px;
+}
+
+@media (min-width: 768px) {
+  .head {
+    margin-bottom: 56px;
+  }
+}

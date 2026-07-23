@@ -1,0 +1,376 @@
+/*
+ * Design tokens read directly from proton.me's computed styles (July 2026).
+ * Proton ships Tailwind with a `dtc-` prefix rather than CSS custom properties,
+ * so these were extracted from live elements rather than copied from a token file.
+ *
+ * Typography note: Proton serves Inter under the family name `ProtonSans`, and
+ * ABC Arizona Flare (a licensed Dinamo face) under `ProtonSerif`. Inter is used
+ * here as-is; Fraunces stands in for Arizona Flare as the closest freely
+ * licensable flared serif.
+ */
+
+:root {
+  /* Brand — purple ramp */
+  --purple-900: #1b1340; /* dark sections, footer, hero */
+  --purple-800: #372580; /* headings on light backgrounds */
+  --purple-700: #4c33a3;
+  --purple-500: #6d4aff; /* brand purple: links, underlines, accents */
+  --purple-300: #b9a8ff;
+  --purple-200: #e2dbff; /* soft gradient wash */
+  --purple-100: #f0ecff;
+
+  /* Action — Proton's primary CTA is cyan on dark purple, not purple */
+  --cyan-300: #67e8f9;
+  --cyan-400: #22d3ee;
+  --cyan-500: #06b6d4;
+
+  /* Neutrals */
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563; /* body copy */
+  --gray-700: #374151;
+  --gray-900: #111827;
+
+  /* Product accents (from Proton's per-product brand colours) */
+  --p-mail: #6d4aff;
+  --p-calendar: #f5b83b;
+  --p-drive: #eb5757;
+  --p-vpn: #4fbf6c;
+  --p-pass: #9d76ff;
+  --p-meet: #52c0e8;
+  --p-lumo: #c3a2ff;
+
+  /* Semantic */
+  --bg: var(--white);
+  --bg-alt: var(--gray-50);
+  --bg-dark: var(--purple-900);
+  --text: var(--gray-900);
+  --text-body: var(--gray-600);
+  --text-heading: var(--purple-800);
+  --border: var(--gray-200);
+
+  /* Radii — Proton uses pill buttons and generously rounded cards */
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-xl: 24px;
+  --r-2xl: 28px;
+  --r-panel: 48px; /* big dark panels get a large top radius */
+  --r-pill: 9999px;
+
+  /* Elevation — extracted verbatim from proton.me cards */
+  --shadow-card: 0 4px 16px rgba(31, 31, 35, 0.08);
+  --ring-card: inset 0 0 0 1px rgba(229, 231, 235, 0.6);
+
+  /* Layout */
+  --container: 1280px;
+  --container-narrow: 896px;
+  --pad-x: 16px;
+  --section-y: 64px;
+
+  /* Motion */
+  --t-fast: 150ms;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* Fonts are injected by next/font in app/layout.tsx */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, Cambria, "Times New Roman", serif;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --pad-x: 32px;
+    --section-y: 80px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --pad-x: 64px;
+    --section-y: 96px;
+  }
+}
+
+/* ---------------------------------------------------------------- reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  /* clears the sticky nav when jumping to an anchor */
+  scroll-padding-top: 88px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Inherited by every serif element on the page. Unknown axes are ignored by
+     the sans, so this is safe to set globally. */
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 14;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: var(--text-heading);
+  /* Fraunces' optical-size axis drives stroke contrast. Arizona Flare is a
+     low-contrast flared serif, so we hold opsz at a text grade even at display
+     sizes — the default (opsz 144) renders far too Didone for Proton. */
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 14;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+::selection {
+  background: var(--purple-200);
+  color: var(--purple-900);
+}
+
+:focus-visible {
+  outline: 2px solid var(--purple-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ----------------------------------------------------- shared utilities */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+}
+
+.containerNarrow {
+  width: 100%;
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+.sectionAlt {
+  background: var(--bg-alt);
+}
+
+.sectionDark {
+  background: var(--bg-dark);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.sectionDark h1,
+.sectionDark h2,
+.sectionDark h3,
+.sectionDark h4 {
+  color: var(--white);
+}
+
+/* Type scale — mirrors proton.me's h1 48/54, h2 36/40, h3 24/28 */
+
+.display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2.25rem, 1.55rem + 3.1vw, 3.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 1.35rem + 1.8vw, 2.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.25rem, 1.1rem + 0.65vw, 1.5rem);
+  line-height: 1.16;
+  letter-spacing: -0.03em;
+}
+
+.lead {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple-500);
+}
+
+.sectionDark .eyebrow {
+  color: var(--cyan-300);
+}
+
+.sectionDark .lead {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Buttons — Proton uses fully rounded pills, 600 weight, 150ms transitions */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: var(--r-pill);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.625;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--t-fast) var(--ease), background-color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease);
+}
+
+.btnPrimary {
+  background: var(--cyan-300);
+  color: var(--purple-900);
+}
+
+.btnPrimary:hover {
+  background: var(--cyan-400);
+}
+
+.btnSecondary {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--cyan-300);
+}
+
+.btnSecondary:hover {
+  background: rgba(103, 232, 249, 0.12);
+}
+
+.btnLight {
+  background: var(--purple-900);
+  color: var(--white);
+}
+
+.btnLight:hover {
+  background: var(--purple-800);
+}
+
+.btnGhost {
+  background: transparent;
+  color: var(--purple-800);
+  border-color: var(--gray-300);
+}
+
+.btnGhost:hover {
+  background: var(--gray-50);
+  border-color: var(--gray-400);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Inline link with Proton's animated purple underline */
+
+.link {
+  color: var(--purple-500);
+  font-weight: 500;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1.5px;
+  transition: background-size 200ms var(--ease);
+}
+
+.link:hover {
+  background-size: 100% 1.5px;
+}
+
+.sectionDark .link {
+  color: var(--cyan-300);
+}

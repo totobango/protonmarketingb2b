@@ -1,0 +1,127 @@
+.tableWrap {
+  overflow-x: auto;
+  background: var(--white);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-card), var(--ring-card);
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.caption {
+  padding: 20px 24px 0;
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  text-align: left;
+}
+
+.table thead th {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--gray-200);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table tbody th {
+  padding: 15px 20px;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--gray-900);
+  text-align: left;
+  min-width: 220px;
+}
+
+.table tbody td {
+  padding: 15px 20px;
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  vertical-align: middle;
+}
+
+.table tbody tr + tr th,
+.table tbody tr + tr td {
+  border-top: 1px solid var(--gray-100);
+}
+
+.table tbody tr:hover th,
+.table tbody tr:hover td {
+  background: var(--gray-50);
+}
+
+.value {
+  font-weight: 600;
+  color: var(--purple-800) !important;
+  white-space: nowrap;
+}
+
+.source {
+  min-width: 190px;
+  line-height: 1.45;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 11px;
+  border-radius: var(--r-pill);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.strong {
+  background: rgba(79, 191, 108, 0.13);
+  color: #2f8f4b;
+}
+
+.medium {
+  background: rgba(245, 184, 59, 0.16);
+  color: #97650a;
+}
+
+.weak {
+  background: rgba(235, 87, 87, 0.12);
+  color: #b93b3b;
+}
+
+.note {
+  max-width: 76ch;
+  margin-top: 32px;
+  padding: 28px 30px;
+  background: var(--gray-50);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.noteTitle {
+  margin-bottom: 14px;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--purple-800);
+}
+
+.note p + p {
+  margin-top: 14px;
+}
+
+.note p {
+  font-size: 0.9375rem;
+  line-height: 1.68;
+  color: var(--text-body);
+}
+
+.note strong {
+  font-weight: 600;
+  color: var(--purple-800);
+}

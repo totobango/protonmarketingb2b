@@ -1,0 +1,197 @@
+/* A thin honesty strip so nobody mistakes these for live Proton pages. */
+.banner {
+  background: var(--purple-800);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.bannerInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  padding-block: 11px;
+  font-size: 0.8125rem;
+}
+
+.bannerTag {
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  background: var(--cyan-300);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--purple-900);
+}
+
+.bannerInner strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.bannerLink {
+  color: var(--cyan-300);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ------------------------------------------------------------------ hero */
+
+.hero {
+  position: relative;
+  background: var(--purple-900);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.glow {
+  position: absolute;
+  top: -35%;
+  left: 52%;
+  width: min(720px, 88vw);
+  aspect-ratio: 1;
+  background: radial-gradient(
+    circle at center,
+    rgba(109, 74, 255, 0.42) 0%,
+    rgba(109, 74, 255, 0.12) 45%,
+    transparent 70%
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+.heroInner {
+  display: grid;
+  gap: 44px;
+  padding-block: clamp(52px, 7vw, 88px) clamp(56px, 8vw, 96px);
+  align-items: start;
+}
+
+.kicker {
+  display: inline-flex;
+  padding: 6px 14px;
+  border: 1px solid rgba(103, 232, 249, 0.3);
+  border-radius: var(--r-pill);
+  background: rgba(103, 232, 249, 0.07);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--cyan-300);
+}
+
+.title {
+  max-width: 18ch;
+  margin-top: 24px;
+  font-family: var(--font-serif);
+  font-size: clamp(2.125rem, 1.4rem + 3.2vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.07;
+  letter-spacing: -0.032em;
+  color: var(--white);
+}
+
+.message {
+  max-width: 52ch;
+  margin-top: 20px;
+  font-size: clamp(1rem, 0.95rem + 0.35vw, 1.1875rem);
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.trust li {
+  padding: 6px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--r-pill);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.formWrap {
+  width: 100%;
+}
+
+.formHead {
+  margin-bottom: 18px;
+}
+
+.formTitle {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--white);
+}
+
+.formLead {
+  margin-top: 8px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ---------------------------------------------------------- sell points */
+
+.points {
+  background: var(--white);
+}
+
+.pointsGrid {
+  display: grid;
+  gap: 20px;
+}
+
+.point {
+  padding: 28px 26px;
+  background: var(--white);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-card), var(--ring-card);
+  transition: transform 260ms var(--ease), box-shadow 260ms var(--ease);
+}
+
+.point:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(31, 31, 35, 0.11), var(--ring-card);
+}
+
+.pointN {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--purple-300);
+}
+
+.pointTitle {
+  margin-top: 10px;
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+  color: var(--purple-800);
+}
+
+.pointBody {
+  margin-top: 12px;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-body);
+}
+
+@media (min-width: 900px) {
+  .heroInner {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+  }
+  .pointsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

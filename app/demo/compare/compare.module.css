@@ -1,0 +1,159 @@
+.section {
+  background: var(--gray-50);
+}
+
+.head {
+  max-width: 62ch;
+  margin-bottom: 40px;
+}
+
+.title {
+  margin-top: 14px;
+}
+
+.lead {
+  margin-top: 16px;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  background: var(--white);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-card), var(--ring-card);
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  min-width: 620px;
+  border-collapse: collapse;
+}
+
+.caption {
+  padding: 20px 24px 0;
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  text-align: left;
+}
+
+.table thead th {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--gray-200);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  text-align: center;
+}
+
+.table thead th:first-child {
+  text-align: left;
+  min-width: 240px;
+}
+
+.table tbody th {
+  padding: 15px 20px;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--gray-700);
+  text-align: left;
+}
+
+.table tbody td {
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.table tbody tr + tr th,
+.table tbody tr + tr td {
+  border-top: 1px solid var(--gray-100);
+}
+
+.protonCol {
+  background: rgba(109, 74, 255, 0.045);
+}
+
+.table thead th.protonCol {
+  color: var(--purple-800);
+  font-weight: 700;
+}
+
+.mark {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+}
+
+.mark svg {
+  width: 15px;
+  height: 15px;
+}
+
+.yes {
+  background: rgba(79, 191, 108, 0.14);
+  color: #2f8f4b;
+}
+
+.no {
+  background: var(--gray-100);
+  color: var(--gray-400);
+}
+
+.facts {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.fact {
+  display: grid;
+  gap: 4px;
+  padding: 20px 22px;
+  background: var(--white);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-card), var(--ring-card);
+}
+
+.factLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+}
+
+.factValue {
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--purple-800);
+}
+
+.factNote {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--gray-500);
+}
+
+.footnote {
+  max-width: 72ch;
+  margin-top: 26px;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: var(--gray-500);
+}
+
+@media (min-width: 640px) {
+  .facts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .facts {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

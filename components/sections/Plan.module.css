@@ -1,0 +1,144 @@
+.timeline {
+  display: grid;
+  gap: 8px;
+}
+
+.phase {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 20px;
+}
+
+.marker {
+  display: grid;
+  justify-items: center;
+  padding-top: 6px;
+}
+
+.dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--purple-500);
+  box-shadow: 0 0 0 4px var(--purple-100);
+}
+
+.line {
+  width: 1.5px;
+  height: 100%;
+  margin-top: 8px;
+  background: linear-gradient(var(--purple-200), var(--gray-200));
+}
+
+.content {
+  padding-bottom: 48px;
+}
+
+.window {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: var(--r-pill);
+  background: var(--purple-100);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--purple-700);
+}
+
+.title {
+  margin-top: 13px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 1.3rem + 0.9vw, 1.875rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.14;
+  color: var(--purple-800);
+}
+
+.thesis {
+  max-width: 64ch;
+  margin-top: 12px;
+  font-size: 1rem;
+  line-height: 1.62;
+  color: var(--text-body);
+}
+
+.streams {
+  display: grid;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.stream {
+  padding: 22px 22px 20px;
+  background: var(--white);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-card), var(--ring-card);
+}
+
+.streamLabel {
+  margin-bottom: 14px;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple-500);
+}
+
+.stream ul {
+  display: grid;
+  gap: 11px;
+}
+
+.stream li {
+  position: relative;
+  padding-left: 17px;
+  font-size: 0.875rem;
+  line-height: 1.58;
+  color: var(--gray-700);
+}
+
+.stream li::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gray-300);
+}
+
+.deliverable {
+  margin-top: 22px;
+  padding: 18px 20px;
+  background: var(--purple-900);
+  border-radius: var(--r-md);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.deliverable span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan-300);
+}
+
+@media (min-width: 768px) {
+  .phase {
+    grid-template-columns: 32px 1fr;
+    gap: 28px;
+  }
+  .streams {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .content {
+    padding-bottom: 56px;
+  }
+}

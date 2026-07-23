@@ -1,0 +1,103 @@
+.footer {
+  background: var(--purple-900);
+  color: rgba(255, 255, 255, 0.6);
+  padding-block: 64px 40px;
+}
+
+.inner {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+}
+
+.top {
+  display: grid;
+  gap: 44px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.identity {
+  max-width: 380px;
+}
+
+.tagline {
+  margin-top: 18px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.email {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--cyan-300);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1.5px;
+  transition: background-size 220ms var(--ease);
+}
+
+.email:hover {
+  background-size: 100% 1.5px;
+}
+
+.colTitle {
+  margin-bottom: 16px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.col ul {
+  display: grid;
+  gap: 11px;
+}
+
+.col a {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.74);
+  transition: color var(--t-fast) var(--ease);
+}
+
+.col a:hover {
+  color: var(--white);
+}
+
+.bottom {
+  display: grid;
+  gap: 14px;
+  padding-top: 28px;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.disclaimer {
+  max-width: 640px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.34);
+}
+
+@media (min-width: 860px) {
+  .top {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 56px;
+  }
+  .bottom {
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    gap: 40px;
+  }
+  .disclaimer {
+    text-align: right;
+    justify-self: end;
+  }
+}

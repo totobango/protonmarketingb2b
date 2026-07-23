@@ -1,0 +1,182 @@
+.stack {
+  display: grid;
+  gap: 16px;
+}
+
+.layer {
+  display: grid;
+  gap: 18px;
+  padding: 28px 26px;
+  background: var(--white);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-card), var(--ring-card);
+  transition: box-shadow 260ms var(--ease);
+}
+
+.layer:hover {
+  box-shadow: 0 14px 34px rgba(31, 31, 35, 0.1), var(--ring-card);
+}
+
+.layerHead {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.n {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--purple-300);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+  color: var(--purple-800);
+}
+
+.layerBody {
+  display: grid;
+  gap: 18px;
+}
+
+.what {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-body);
+}
+
+.fixes {
+  display: grid;
+  gap: 9px;
+}
+
+.fixes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--gray-700);
+}
+
+.fixes svg {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  color: var(--p-vpn);
+}
+
+.limit {
+  padding: 15px 17px;
+  background: var(--gray-50);
+  border-left: 2.5px solid var(--purple-300);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--gray-600);
+}
+
+.limit span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--purple-500);
+}
+
+/* ------------------------------------------------------ hypocrisy test */
+
+.test {
+  margin-top: 40px;
+  padding: 36px 30px;
+  background: var(--purple-900);
+  border-radius: var(--r-2xl);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.testTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 1.3rem + 0.9vw, 1.875rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--white);
+}
+
+.testLead {
+  max-width: 68ch;
+  margin-top: 14px;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.testList {
+  display: grid;
+  gap: 14px;
+  margin-top: 26px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.testList li {
+  position: relative;
+  max-width: 74ch;
+  padding-left: 20px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.testList li::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan-300);
+}
+
+.testList strong {
+  font-weight: 600;
+  color: var(--white);
+}
+
+.testClose {
+  max-width: 72ch;
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@media (min-width: 900px) {
+  .layer {
+    grid-template-columns: 300px 1fr;
+    gap: 32px;
+    padding: 32px 30px;
+  }
+  .layerHead {
+    display: block;
+  }
+  .title {
+    margin-top: 8px;
+  }
+  .test {
+    padding: 46px 44px;
+  }
+}
