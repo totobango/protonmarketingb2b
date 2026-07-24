@@ -4,7 +4,7 @@ import DemoPage from "@/components/DemoPage";
 export const metadata: Metadata = {
   title: "Proton VPN for Newsrooms",
   description:
-    "If your sources trust you, protect their identity. No-logs VPN, servers in 140+ countries, private gateways and NetShield — a demo landing page from Thomas Germain's Proton B2B pitch.",
+    "If your sources trust you, protect their identity. No-logs VPN, servers in 140+ countries, private gateways and NetShield. A demo landing page from Thomas Germain's Proton B2B pitch.",
 };
 
 export default function MediaDemo() {
@@ -15,7 +15,7 @@ export default function MediaDemo() {
       title="If your sources trust you, protect their identity"
       message="A source's anonymity is only as strong as the network your reporters file from. Proton VPN secures the connection between your newsroom and the people who risk everything to talk to it."
       formTitle="Request access"
-      formLead="Proton offers discounted access for media organizations — tell us about your newsroom."
+      formLead="Proton offers discounted access for media organizations. Tell us about your newsroom."
       submitLabel="Request access"
       fields={[
         {
@@ -40,7 +40,7 @@ export default function MediaDemo() {
           name: "journalists",
           label: "Number of journalists",
           type: "select",
-          options: ["1–9", "10–49", "50–199", "200–999", "1,000+"],
+          options: ["1 to 9", "10 to 49", "50 to 199", "200 to 999", "1,000+"],
         },
       ]}
       points={[

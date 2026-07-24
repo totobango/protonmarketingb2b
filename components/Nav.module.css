@@ -231,10 +231,8 @@
 
 .sheetLabel {
   padding: 22px 0 8px;
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--cyan-300);
 }
 

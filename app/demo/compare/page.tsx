@@ -6,12 +6,12 @@ import styles from "./compare.module.css";
 export const metadata: Metadata = {
   title: "Proton vs Google Workspace",
   description:
-    "Same productivity. Zero data mining. A feature comparison of Proton Workspace against Google and Microsoft 365 — a demo landing page from Thomas Germain's Proton B2B pitch.",
+    "Same productivity. Zero data mining. A feature comparison of Proton Workspace against Google and Microsoft 365. A demo landing page from Thomas Germain's Proton B2B pitch.",
 };
 
 /**
  * These seven rows are Proton's own published comparison, reproduced verbatim
- * from proton.me/business (July 2026) rather than rewritten — including their
+ * from proton.me/business (July 2026) rather than rewritten, including their
  * column labels, "Google" and "Microsoft 365".
  */
 const ROWS: { feature: string; proton: boolean; google: boolean; ms: boolean }[] =
@@ -67,7 +67,7 @@ export default function CompareDemo() {
       campaign="The Google Workspace alternative"
       kicker="Proton vs Google Workspace"
       title="Same productivity. Zero data mining."
-      message="Your team keeps the mail, calendar, files, docs and meetings they already know how to use. What changes is who else can read them — and Easy Switch moves you across with guided live support at no extra cost."
+      message="Your team keeps the mail, calendar, files, docs and meetings they already know how to use. What changes is who else can read them, and Easy Switch moves you across with guided live support at no extra cost."
       formTitle="Get a migration plan"
       formLead="Tell us your setup and we'll map the switch, seat by seat."
       submitLabel="Get migration plan"
@@ -84,7 +84,7 @@ export default function CompareDemo() {
           name: "seats",
           label: "Google Workspace users",
           type: "select",
-          options: ["1–9", "10–49", "50–199", "200–999", "1,000+"],
+          options: ["1 to 9", "10 to 49", "50 to 199", "200 to 999", "1,000+"],
         },
         {
           name: "concern",
@@ -103,7 +103,7 @@ export default function CompareDemo() {
         {
           title: "Encrypted so we can't read it",
           body:
-            "Proton Workspace protects your data from breaches, AI training and surveillance with end-to-end encryption. Not even Proton can see it — which is a materially different promise from 'we won't look'.",
+            "Proton Workspace protects your data from breaches, AI training and surveillance with end-to-end encryption. Not even Proton can see it, which is a materially different promise from 'we won't look'.",
         },
         {
           title: "Migration is the easy part",
@@ -113,20 +113,19 @@ export default function CompareDemo() {
         {
           title: "One suite, one bill",
           body:
-            "Mail, Calendar, Drive, Docs, Sheets and Meet — plus a VPN and a password manager that Google and Microsoft simply do not include at any tier.",
+            "Mail, Calendar, Drive, Docs, Sheets and Meet, plus a VPN and a password manager that Google and Microsoft simply do not include at any tier.",
         },
       ]}
     >
       <section className={`section ${styles.section}`}>
         <div className="container">
           <Reveal className={styles.head}>
-            <p className="eyebrow">Feature comparison</p>
-            <h2 className={`h2 ${styles.title}`}>
+            <h2 className={styles.title}>
               What you actually get, side by side
             </h2>
             <p className={`lead ${styles.lead}`}>
               These are Proton&apos;s own published comparison points, reproduced
-              as they appear on proton.me — not a rewrite designed to flatter.
+              as they appear on proton.me, not a rewrite designed to flatter.
             </p>
           </Reveal>
 
@@ -177,7 +176,7 @@ export default function CompareDemo() {
           <p className={styles.footnote}>
             Proton pricing verified on proton.me/business/plans, July 2026.
             Google and Microsoft pricing is not shown here because it varies by
-            plan and region — and quoting a competitor&apos;s price you
+            plan and region, and quoting a competitor&apos;s price you
             haven&apos;t verified is how a comparison page loses its credibility.
           </p>
         </div>

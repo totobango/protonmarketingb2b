@@ -10,7 +10,7 @@
  */
 
 :root {
-  /* Brand — purple ramp */
+  /* Brand: purple ramp */
   --purple-900: #1b1340; /* dark sections, footer, hero */
   --purple-800: #372580; /* headings on light backgrounds */
   --purple-700: #4c33a3;
@@ -19,7 +19,7 @@
   --purple-200: #e2dbff; /* soft gradient wash */
   --purple-100: #f0ecff;
 
-  /* Action — Proton's primary CTA is cyan on dark purple, not purple */
+  /* Action: Proton's primary CTA is cyan on dark purple, not purple */
   --cyan-300: #67e8f9;
   --cyan-400: #22d3ee;
   --cyan-500: #06b6d4;
@@ -37,7 +37,7 @@
   --gray-900: #111827;
 
   /* Product accents (from Proton's per-product brand colours).
-     These are tuned for fills — dots, rules, bar segments — where WCAG text
+     These are tuned for fills (dots, rules, bar segments) where WCAG text
      contrast does not apply. */
   --p-mail: #6d4aff;
   --p-calendar: #f5b83b;
@@ -65,7 +65,7 @@
   --text-heading: var(--purple-800);
   --border: var(--gray-200);
 
-  /* Radii — Proton uses pill buttons and generously rounded cards */
+  /* Radii: Proton uses pill buttons and generously rounded cards */
   --r-sm: 12px;
   --r-md: 16px;
   --r-lg: 20px;
@@ -74,7 +74,7 @@
   --r-panel: 48px; /* big dark panels get a large top radius */
   --r-pill: 9999px;
 
-  /* Elevation — extracted verbatim from proton.me cards */
+  /* Elevation: extracted verbatim from proton.me cards */
   --shadow-card: 0 4px 16px rgba(31, 31, 35, 0.08);
   --ring-card: inset 0 0 0 1px rgba(229, 231, 235, 0.6);
 
@@ -165,7 +165,7 @@ h6 {
   color: var(--text-heading);
   /* Fraunces' optical-size axis drives stroke contrast. Arizona Flare is a
      low-contrast flared serif, so we hold opsz at a text grade even at display
-     sizes — the default (opsz 144) renders far too Didone for Proton. */
+     sizes. The default (opsz 144) renders far too Didone for Proton. */
   font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 14;
 }
 
@@ -253,7 +253,7 @@ table {
   color: var(--white);
 }
 
-/* Type scale — mirrors proton.me's h1 48/54, h2 36/40, h3 24/28 */
+/* Type scale: mirrors proton.me's h1 48/54, h2 36/40, h3 24/28 */
 
 .display {
   font-family: var(--font-serif);
@@ -302,7 +302,7 @@ table {
   color: rgba(255, 255, 255, 0.72);
 }
 
-/* Buttons — Proton uses fully rounded pills, 600 weight, 150ms transitions */
+/* Buttons: Proton uses fully rounded pills, 600 weight, 150ms transitions */
 
 .btn {
   display: inline-flex;

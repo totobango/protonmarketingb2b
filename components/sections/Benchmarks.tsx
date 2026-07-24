@@ -1,6 +1,7 @@
 import { BENCHMARKS } from "@/lib/content";
 import Reveal from "../Reveal";
 import SectionHead from "../SectionHead";
+import FunnelRail from "../FunnelRail";
 import styles from "./Benchmarks.module.css";
 
 const CONFIDENCE_LABEL: Record<string, string> = {
@@ -14,10 +15,11 @@ export default function Benchmarks() {
     <section id="benchmarks" className="section">
       <div className="container">
         <SectionHead
-          eyebrow="Benchmarks"
-          title="The numbers I would forecast against — and how far I trust each one"
+          title="The numbers I would forecast against, and how far I trust each one"
           lead="Most B2B benchmark decks quote figures that trace back to a blog post citing another blog post. I checked these. Where a number is shaky I have said so, because a forecast built on a bad benchmark fails in month two, in public."
         />
+
+        <FunnelRail />
 
         <Reveal className={styles.tableWrap}>
           <table className={styles.table}>
@@ -58,7 +60,7 @@ export default function Benchmarks() {
             forecast before Proton has its own data, and for spotting when
             something is off by an order of magnitude rather than a few percent.
             Once the first full quarter of CRM-attributed pipeline exists, Proton
-            benchmarks against Proton — segmented by product and seat band,
+            benchmarks against Proton, segmented by product and seat band,
             because a €4.99 Pass seat and a €24.99 Workspace Premium seat should
             never share a CPL target.
           </p>

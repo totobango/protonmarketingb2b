@@ -1,0 +1,131 @@
+.figure {
+  margin: 0 0 44px;
+  padding: 30px 26px 26px;
+  background: var(--purple-900);
+  border-radius: var(--r-2xl);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.flow {
+  display: grid;
+  gap: 0;
+}
+
+.stageWrap {
+  display: grid;
+  gap: 0;
+}
+
+.stage {
+  display: grid;
+  gap: 5px;
+  padding: 18px 18px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--r-md);
+  height: 100%;
+  align-content: start;
+}
+
+/* The server boundary is the load-bearing step, so it gets the cyan. */
+.pivot {
+  background: rgba(103, 232, 249, 0.09);
+  border-color: rgba(103, 232, 249, 0.42);
+}
+
+.where {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pivot .where {
+  color: var(--cyan-300);
+}
+
+.what {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.detail {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.arrow {
+  width: 26px;
+  height: 16px;
+  color: rgba(103, 232, 249, 0.55);
+  justify-self: center;
+  margin-block: 10px;
+  rotate: 90deg;
+}
+
+.never {
+  display: grid;
+  gap: 10px;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.neverLabel {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--cyan-300);
+}
+
+.never ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.never li {
+  padding: 5px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--r-pill);
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: line-through;
+  text-decoration-color: rgba(235, 87, 87, 0.75);
+  text-decoration-thickness: 1.5px;
+}
+
+.caption {
+  margin-top: 20px;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 62ch;
+}
+
+@media (min-width: 880px) {
+  .figure {
+    padding: 36px 34px 30px;
+  }
+  .flow {
+    grid-template-columns: repeat(4, 1fr);
+    align-items: stretch;
+  }
+  .stageWrap {
+    grid-template-columns: 1fr auto;
+    align-items: stretch;
+  }
+  .stageWrap:last-child {
+    grid-template-columns: 1fr;
+  }
+  .arrow {
+    rotate: none;
+    margin-block: 0;
+    margin-inline: 10px;
+    align-self: center;
+  }
+}

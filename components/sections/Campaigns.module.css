@@ -1,88 +1,71 @@
-.grid {
-  display: grid;
-  gap: 20px;
+/* Full-width statements. The campaign message is the point, so it runs at
+   display size across the measure instead of being boxed into a card. */
+
+.list {
+  border-top: 1px solid var(--gray-200);
 }
 
-.card {
+.item {
+  padding-block: 40px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.head {
   display: flex;
-  flex-direction: column;
-  padding: 30px 28px 26px;
-  background: var(--white);
-  border-radius: var(--r-xl);
-  box-shadow: var(--shadow-card), var(--ring-card);
-  transition: transform 260ms var(--ease), box-shadow 260ms var(--ease);
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 34px rgba(31, 31, 35, 0.11), var(--ring-card);
-}
-
-.top {
-  display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: 13px;
-}
-
-.n {
-  font-family: var(--font-sans);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  gap: 6px 16px;
 }
 
 .headline {
   font-family: var(--font-serif);
-  font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  font-size: clamp(1.5rem, 1.25rem + 1.1vw, 2rem);
   font-weight: 400;
   letter-spacing: -0.03em;
-  line-height: 1.14;
+  line-height: 1.12;
   color: var(--purple-800);
+  text-wrap: balance;
 }
 
 .audience {
-  margin-top: 11px;
   font-size: 0.8125rem;
-  font-weight: 500;
   color: var(--gray-500);
 }
 
-.insight {
-  margin-top: 16px;
-  font-size: 0.9375rem;
-  line-height: 1.65;
-  color: var(--text-body);
+.message {
+  max-width: 30ch;
+  margin-top: 22px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 1.05rem + 0.95vw, 1.75rem);
+  line-height: 1.28;
+  letter-spacing: -0.025em;
+  text-wrap: pretty;
 }
 
-.message {
-  margin: 20px 0 0;
-  padding: 3px 0 3px 16px;
-  border-left: 2.5px solid var(--purple-500);
-  font-family: var(--font-serif);
-  font-size: 1.0625rem;
-  line-height: 1.45;
-  letter-spacing: -0.02em;
-  color: var(--purple-800);
+.insight {
+  max-width: 68ch;
+  margin-top: 18px;
+  font-size: 0.9375rem;
+  line-height: 1.68;
+  color: var(--text-body);
+  text-wrap: pretty;
 }
 
 .meta {
   display: grid;
-  gap: 13px;
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid var(--gray-200);
+  gap: 16px;
+  margin-top: 26px;
 }
 
 .meta > div {
   display: grid;
   gap: 4px;
+  align-content: start;
 }
 
 .meta dt {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
   color: var(--gray-500);
 }
 
@@ -97,10 +80,9 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  margin-top: 22px;
   padding: 9px 16px;
-  align-self: flex-start;
-  border: 1px solid var(--gray-200);
+  justify-self: start;
+  border: 1px solid var(--gray-300);
   border-radius: var(--r-pill);
   font-size: 0.8125rem;
   font-weight: 600;
@@ -124,8 +106,16 @@
   transform: translateX(2px);
 }
 
-@media (min-width: 880px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (min-width: 720px) {
+  .meta {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .message {
+    max-width: 34ch;
   }
 }

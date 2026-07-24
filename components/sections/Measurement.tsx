@@ -1,23 +1,22 @@
 import Reveal from "../Reveal";
 import SectionHead from "../SectionHead";
+import DataFlow from "../DataFlow";
 import styles from "./Measurement.module.css";
 
 const LAYERS = [
   {
-    n: "01",
     title: "First-party server-side tagging",
     what:
       "Tags fire from a server endpoint on a Proton-owned subdomain instead of from the visitor's browser. Proton decides what leaves that server, field by field, before any platform sees it.",
     fixes: [
       "Ad blockers and tracking-prevention stop removing legitimate conversion data",
       "One controlled place to strip, hash or drop a field before it reaches a vendor",
-      "Page weight drops — no vendor scripts loading in the browser",
+      "Page weight drops, because no vendor scripts loading in the browser",
     ],
     limit:
-      "It does not create immortal cookies. Chrome caps any cookie at 400 days, and Safari still limits script-set cookies to 7 days — and treats CNAME-cloaked server endpoints the same way. A genuinely first-party server-set cookie helps; claiming server-side tagging alone buys 400-day identity on every browser is wrong, and Proton's Ad Tech team would spot it immediately.",
+      "It does not create immortal cookies. Chrome caps any cookie at 400 days, and Safari still limits script-set cookies to 7 days, and treats CNAME-cloaked server endpoints the same way. A genuinely first-party server-set cookie helps; claiming server-side tagging alone buys 400-day identity on every browser is wrong, and Proton's Ad Tech team would spot it immediately.",
   },
   {
-    n: "02",
     title: "Conversion APIs, sending less on purpose",
     what:
       "Server-to-server conversion events to Google, LinkedIn and Meta: hashed identifiers only, deduplicated against browser events, sent only for users who consented.",
@@ -27,10 +26,9 @@ const LAYERS = [
       "Offline conversion import lets the platforms optimise toward qualified pipeline, not raw form fills",
     ],
     limit:
-      "Match rates are never 100%, and a hash is a pseudonym rather than anonymity. The discipline is to send the minimum field set that still lets bidding work — and to be able to explain, in one sentence, why every field is there.",
+      "Match rates are never 100%, and a hash is a pseudonym rather than anonymity. The discipline is to send the minimum field set that still lets bidding work, and to be able to explain, in one sentence, why every field is there.",
   },
   {
-    n: "03",
     title: "CRM as the single source of truth",
     what:
       "HubSpot holds the record, not the ad platforms. UTMs are captured on first touch and persisted on the contact; lifecycle stages carry the lead from MQL through SQL to closed-won.",
@@ -43,7 +41,6 @@ const LAYERS = [
       "Last-touch and first-touch both lie in a B2B cycle with a buying committee and a multi-month consideration window. The CRM tells you what is real; it does not by itself tell you what was causal.",
   },
   {
-    n: "04",
     title: "Incrementality as the tiebreaker",
     what:
       "Geo holdouts, conversion lift tests and clean A/B splits to answer the only question that matters: would this pipeline have existed without the spend?",
@@ -53,7 +50,7 @@ const LAYERS = [
       "Gives a defensible basis for moving budget between channels",
     ],
     limit:
-      "Tests need real spend and enough time to clear the sales cycle — a four-week holdout on a three-month cycle measures leads, not revenue. I would run few tests, on the largest line items, and treat the rest as directional.",
+      "Tests need real spend and enough time to clear the sales cycle. A four-week holdout on a three-month cycle measures leads, not revenue. I would run few tests, on the largest line items, and treat the rest as directional.",
   },
 ];
 
@@ -62,21 +59,21 @@ export default function Measurement() {
     <section id="measurement" className="section sectionAlt">
       <div className="container">
         <SectionHead
-          eyebrow="Privacy-first measurement"
           title="The marketing has to practice what the product preaches"
-          lead="Proton cannot run its funnel on the surveillance stack it sells against. That is a constraint, and it is also the most interesting part of this job — it forces measurement that is designed rather than installed."
+          lead="Proton cannot run its funnel on the surveillance stack it sells against. That is a constraint, and it is also the most interesting part of this job: it forces measurement that is designed rather than installed."
         />
+
+        <DataFlow />
 
         <div className={styles.stack}>
           {LAYERS.map((l, i) => (
             <Reveal
               as="article"
-              key={l.n}
+              key={l.title}
               delay={i * 70}
               className={styles.layer}
             >
               <div className={styles.layerHead}>
-                <span className={styles.n}>{l.n}</span>
                 <h3 className={styles.title}>{l.title}</h3>
               </div>
 
@@ -141,7 +138,7 @@ export default function Measurement() {
           <p className={styles.testClose}>
             The honest trade-off: this stack measures with less granularity than
             a conventional one. You give up some attribution precision and buy it
-            back with experiment design. For Proton that is not a compromise —
+            back with experiment design. For Proton that is not a compromise.
             it is the only version of the job that is credible.
           </p>
         </Reveal>

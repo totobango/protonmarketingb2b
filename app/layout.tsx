@@ -5,7 +5,7 @@ import "./globals.css";
 /*
  * Proton serves Inter under the family name `ProtonSans`, so this is the real
  * typeface, not an approximation. Their display face is ABC Arizona Flare
- * (`ProtonSerif`), which is commercially licensed — Fraunces is the closest
+ * (`ProtonSerif`), which is commercially licensed. Fraunces is the closest
  * freely licensable flared serif. Both are self-hosted by next/font, so the
  * page makes no third-party font requests.
  */
@@ -27,8 +27,8 @@ const SITE = "https://proton-b2b-pitch.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "Proton B2B Performance Marketing Strategy — Thomas Germain",
-    template: "%s | Proton B2B Pitch — Thomas Germain",
+    default: "Proton B2B Performance Marketing Strategy · Thomas Germain",
+    template: "%s | Proton B2B Pitch · Thomas Germain",
   },
   description:
     "A hands-on B2B performance marketing pitch for Proton Workspace: audience mapping, a 90-day plan, privacy-first attribution, campaign concepts, and channel mix. By Thomas Germain.",
@@ -48,15 +48,15 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE,
     siteName: "Proton B2B Performance Marketing Strategy",
-    title: "Proton B2B Performance Marketing Strategy — Thomas Germain",
+    title: "Proton B2B Performance Marketing Strategy · Thomas Germain",
     description:
-      "How I would acquire, convert, and retain B2B customers for Proton Workspace — while practicing what we preach on privacy.",
+      "How I would acquire, convert, and retain B2B customers for Proton Workspace, while practicing what we preach on privacy.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Proton B2B Performance Marketing Strategy — Thomas Germain",
+    title: "Proton B2B Performance Marketing Strategy · Thomas Germain",
     description:
-      "How I would acquire, convert, and retain B2B customers for Proton Workspace — while practicing what we preach on privacy.",
+      "How I would acquire, convert, and retain B2B customers for Proton Workspace, while practicing what we preach on privacy.",
   },
   robots: { index: true, follow: true },
 };

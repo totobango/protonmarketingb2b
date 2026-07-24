@@ -10,7 +10,7 @@ export type Field =
 type Props = {
   fields: Field[];
   submitLabel: string;
-  /** Shown under the button — the honest version of a privacy notice. */
+  /** Shown under the button: the honest version of a privacy notice. */
   footnote?: string;
 };
 
@@ -18,7 +18,7 @@ type Errors = Record<string, string>;
 
 /**
  * Client-side only: there is no backend, by design. This is a demo of the form
- * experience, not a live lead capture — so nothing is transmitted anywhere.
+ * experience, not a live lead capture, so nothing is transmitted anywhere.
  */
 export default function LeadForm({ fields, submitLabel, footnote }: Props) {
   const uid = useId();
@@ -77,7 +77,7 @@ export default function LeadForm({ fields, submitLabel, footnote }: Props) {
           <p className={styles.doneBody}>
             In a live campaign this would create a contact in HubSpot, stamp the
             first-touch UTMs onto the record, and fire a server-side conversion
-            with a hashed email — no third-party pixel involved.
+            with a hashed email. No third-party pixel involved.
           </p>
           <p className={styles.doneNote}>
             This is a demo page. Nothing was submitted or stored.
@@ -147,7 +147,7 @@ export default function LeadForm({ fields, submitLabel, footnote }: Props) {
 
         <p className={styles.footnote}>
           {footnote ??
-            "Demo form — nothing is sent or stored. No tracking pixels on this page."}
+            "Demo form. Nothing is sent or stored. No tracking pixels on this page."}
         </p>
       </form>
     </div>

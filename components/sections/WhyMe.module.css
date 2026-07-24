@@ -1,89 +1,71 @@
-.grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr;
-}
+/* Rows divided by hairlines rather than a four-across card grid. The claim
+   sits in the left column at display size and does the scanning work. */
 
-.card {
-  position: relative;
-  padding: 30px 28px 28px;
-  background: var(--white);
-  border-radius: var(--r-xl);
-  box-shadow: var(--shadow-card), var(--ring-card);
-  transition: transform 260ms var(--ease), box-shadow 260ms var(--ease);
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 34px rgba(31, 31, 35, 0.11), var(--ring-card);
-}
-
-.rule {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  width: 3px;
-  height: 26px;
-  border-radius: 0 3px 3px 0;
-}
-
-.claim {
-  font-family: var(--font-sans);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.title {
-  margin-top: 6px;
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 1.16;
-  color: var(--purple-800);
-}
-
-.body {
-  margin-top: 14px;
-  font-size: 0.9375rem;
-  line-height: 1.65;
-  color: var(--text-body);
-}
-
-.proof {
-  display: grid;
-  gap: 9px;
-  margin-top: 22px;
-  padding-top: 20px;
+.list {
   border-top: 1px solid var(--gray-200);
 }
 
-.proof li {
+.row {
+  display: grid;
+  gap: 14px;
+  padding-block: 30px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.term {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+}
+
+.claim {
+  font-family: var(--font-serif);
+  font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--gray-500);
+}
+
+.detail {
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.body {
+  max-width: 68ch;
+  font-size: 0.9375rem;
+  line-height: 1.68;
+  color: var(--text-body);
+  text-wrap: pretty;
+}
+
+.proof {
   display: flex;
-  align-items: flex-start;
-  gap: 9px;
-  font-size: 0.875rem;
-  line-height: 1.5;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.proof li {
+  padding: 5px 12px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-pill);
+  font-size: 0.8125rem;
   color: var(--gray-700);
+  background: var(--gray-50);
 }
 
-.proof svg {
-  flex-shrink: 0;
-  width: 15px;
-  height: 15px;
-  margin-top: 2px;
-  color: var(--purple-500);
-}
-
-@media (min-width: 700px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
+@media (min-width: 860px) {
+  .row {
+    grid-template-columns: minmax(200px, 15.5rem) 1fr;
+    gap: 48px;
+    padding-block: 36px;
   }
 }

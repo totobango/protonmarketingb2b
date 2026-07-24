@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p>Thomas Germain — Barcelona, 2026</p>
+          <p>Thomas Germain, Barcelona, 2026</p>
           <p className={styles.disclaimer}>
             An independent pitch by a job applicant. Not affiliated with,
             endorsed by, or published by Proton AG. Product names, pricing and

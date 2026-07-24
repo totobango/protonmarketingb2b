@@ -12,7 +12,7 @@ type Props = {
 };
 
 /**
- * Scroll-reveal wrapper. Reveals once, then unobserves — no work on scroll.
+ * Scroll-reveal wrapper. Reveals once, then unobserves, so no work happens on scroll.
  * Content is visible by default and only hidden once JS confirms it can
  * animate, so it degrades safely without JS and for reduced-motion users.
  */

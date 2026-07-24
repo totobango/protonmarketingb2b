@@ -1,5 +1,5 @@
 .head {
-  max-width: 62ch;
+  max-width: 34ch;
   margin-bottom: 48px;
 }
 
@@ -8,16 +8,29 @@
   text-align: center;
 }
 
+/* Without a kicker the heading carries the whole entry, so it runs slightly
+   larger than the shared .h2 scale. */
 .title {
-  margin-top: 14px;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.875rem, 1.35rem + 2.3vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.032em;
+  color: var(--purple-800);
+  text-wrap: balance;
 }
 
 .lead {
-  margin-top: 18px;
+  max-width: 62ch;
+  margin-top: 20px;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text-body);
+  text-wrap: pretty;
 }
 
 @media (min-width: 768px) {
   .head {
-    margin-bottom: 56px;
+    margin-bottom: 60px;
   }
 }

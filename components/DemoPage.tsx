@@ -90,9 +90,6 @@ export default function DemoPage({
                   delay={i * 80}
                   className={styles.point}
                 >
-                  <span className={styles.pointN} aria-hidden="true">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
                   <h3 className={styles.pointTitle}>{p.title}</h3>
                   <p className={styles.pointBody}>{p.body}</p>
                 </Reveal>

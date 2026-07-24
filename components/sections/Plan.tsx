@@ -8,7 +8,6 @@ export default function Plan() {
     <section id="plan" className="section">
       <div className="container">
         <SectionHead
-          eyebrow="First 90 days"
           title="Audit before rebuilding. Rebuild before scaling."
           lead="Spending more on a funnel you cannot measure is how B2B budgets disappear. This order is deliberate: I want a baseline nobody can dispute before I touch a single campaign."
         />

@@ -8,101 +8,81 @@ export default function Audiences() {
     <section id="audiences" className="section sectionAlt">
       <div className="container">
         <SectionHead
-          eyebrow="Audience mapping"
           title="Six products, six buyers, one funnel each"
           lead="Proton for Business is not one audience. A managing partner buying Mail Essentials at €7.99 and a CTO evaluating Workspace Premium at €24.99 need different proof, different channels and different landing pages."
         />
 
-        <div className={styles.stats}>
-          {SEGMENT_STATS.map((s, i) => (
-            <Reveal key={s.label} delay={i * 60} className={styles.stat}>
-              <span className={styles.statValue}>{s.value}</span>
-              <span className={styles.statLabel}>{s.label}</span>
-            </Reveal>
-          ))}
-        </div>
-        <p className={styles.statsNote}>
-          Proton&apos;s own published customer mix — the segments below follow
-          where the customers already are.
-        </p>
-
-        <Reveal className={styles.timeline}>
-          <span className={styles.timelineLabel}>Recent releases</span>
-          <ul>
-            {TIMELINE.map((t) => (
-              <li key={t.date}>
-                <time>{t.date}</time>
-                {t.event}
+        <Reveal className={styles.context}>
+          <ul className={styles.stats}>
+            {SEGMENT_STATS.map((s) => (
+              <li key={s.label}>
+                <span className={styles.statValue}>{s.value}</span>
+                <span className={styles.statLabel}>{s.label}</span>
               </li>
             ))}
           </ul>
+
+          <div className={styles.releases}>
+            <h3 className={styles.releasesTitle}>Recent releases</h3>
+            <ul>
+              {TIMELINE.map((t) => (
+                <li key={t.date}>
+                  <time>{t.date}</time>
+                  {t.event}
+                </li>
+              ))}
+            </ul>
+          </div>
         </Reveal>
 
-        <div className={styles.grid}>
+        <p className={styles.contextNote}>
+          Proton&apos;s own published customer mix and shipping cadence. The
+          segments below follow where the customers already are.
+        </p>
+
+        <div className={styles.list}>
           {AUDIENCES.map((a, i) => (
             <Reveal
               as="article"
               key={a.product}
-              delay={(i % 3) * 70}
-              className={styles.card}
+              delay={Math.min(i, 2) * 60}
+              className={styles.row}
             >
-              <header className={styles.head}>
+              <div className={styles.ident}>
                 <span
-                  className={styles.dot}
+                  className={styles.bar}
                   style={{ background: a.accent }}
                   aria-hidden="true"
                 />
-                <div>
-                  <h3 className={styles.product}>{a.product}</h3>
-                  <p className={styles.plan}>{a.plan}</p>
-                </div>
-              </header>
-
-              <div className={styles.price}>
-                <span className={styles.priceValue}>{a.price}</span>
-                <span className={styles.priceNote}>{a.priceNote}</span>
+                <h3 className={styles.product}>{a.product}</h3>
+                <p className={styles.plan}>{a.plan}</p>
+                <p className={styles.price}>{a.price}</p>
+                <p className={styles.priceNote}>{a.priceNote}</p>
               </div>
 
-              <dl className={styles.meta}>
-                <div>
-                  <dt>Personas</dt>
-                  <dd>
-                    <ul className={styles.tags}>
-                      {a.personas.map((p) => (
-                        <li key={p}>{p}</li>
-                      ))}
-                    </ul>
-                  </dd>
-                </div>
-                <div>
-                  <dt>Industries</dt>
-                  <dd>{a.industries.join(" · ")}</dd>
-                </div>
-                <div>
-                  <dt>Company size</dt>
-                  <dd>{a.size}</dd>
-                </div>
-                <div>
-                  <dt>Pain point</dt>
-                  <dd>{a.pain}</dd>
-                </div>
-              </dl>
+              <div className={styles.body}>
+                <p className={styles.pain}>{a.pain}</p>
+                <p className={styles.message}>{a.message}</p>
 
-              <blockquote
-                className={styles.message}
-                style={{ borderColor: a.accent }}
-              >
-                {a.message}
-              </blockquote>
-
-              <footer className={styles.channels}>
-                <span className={styles.channelsLabel}>Best channels</span>
-                <ul>
-                  {a.channels.map((c) => (
-                    <li key={c}>{c}</li>
-                  ))}
-                </ul>
-              </footer>
+                <dl className={styles.meta}>
+                  <div>
+                    <dt>Buying committee</dt>
+                    <dd>{a.personas.join(", ")}</dd>
+                  </div>
+                  <div>
+                    <dt>Industries</dt>
+                    <dd>{a.industries.join(", ")}</dd>
+                  </div>
+                  <div>
+                    <dt>Company size</dt>
+                    <dd>{a.size}</dd>
+                  </div>
+                  <div>
+                    <dt>Best channels</dt>
+                    <dd>{a.channels.join(" · ")}</dd>
+                  </div>
+                </dl>
+              </div>
             </Reveal>
           ))}
         </div>

@@ -8,9 +8,8 @@ export default function ChannelMix() {
     <section id="channel-mix" className="section sectionAlt">
       <div className="container">
         <SectionHead
-          eyebrow="Channel mix"
           title="Where I would put the first euro, and why"
-          lead="A starting allocation, not a conclusion. The whole point of the 90-day plan is to earn the right to change these numbers — the split at day 90 should look different from the split at day 1, and I would expect to defend why."
+          lead="A starting allocation, not a conclusion. The whole point of the 90-day plan is to earn the right to change these numbers. The split at day 90 should look different from the split at day 1, and I would expect to defend why."
         />
 
         <Reveal className={styles.barWrap}>

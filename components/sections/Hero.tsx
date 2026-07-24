@@ -18,7 +18,7 @@ export default function Hero() {
 
         <p className={styles.baseline}>
           How I would acquire, convert and retain B2B customers for Proton
-          Workspace — while practicing what we preach on privacy.
+          Workspace, while practicing what we preach on privacy.
         </p>
 
         <div className={styles.actions}>

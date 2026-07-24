@@ -9,36 +9,28 @@ export default function Campaigns() {
     <section id="campaigns" className="section">
       <div className="container">
         <SectionHead
-          eyebrow="Campaign concepts"
           title="Four campaigns I would brief in week one"
-          lead="Each one starts from something the buyer already half-believes and makes it specific. Four of them have a working landing page on this site — built, not mocked up."
+          lead="Each one starts from something the buyer already half-believes and makes it specific. All four have a working landing page on this site. Built, not mocked up."
         />
 
-        <div className={styles.grid}>
+        <div className={styles.list}>
           {CAMPAIGNS.map((c, i) => (
             <Reveal
               as="article"
-              key={c.n}
-              delay={(i % 2) * 80}
-              className={styles.card}
+              key={c.headline}
+              delay={Math.min(i, 2) * 60}
+              className={styles.item}
             >
-              <div className={styles.top}>
-                <span className={styles.n} style={{ color: c.accentInk }}>
-                  {c.n}
-                </span>
+              <header className={styles.head}>
                 <h3 className={styles.headline}>{c.headline}</h3>
-              </div>
+                <p className={styles.audience}>{c.audience}</p>
+              </header>
 
-              <p className={styles.audience}>{c.audience}</p>
+              <p className={styles.message} style={{ color: c.accentInk }}>
+                {c.message}
+              </p>
 
               <p className={styles.insight}>{c.insight}</p>
-
-              <blockquote
-                className={styles.message}
-                style={{ borderColor: c.accent }}
-              >
-                {c.message}
-              </blockquote>
 
               <dl className={styles.meta}>
                 <div>
@@ -53,23 +45,24 @@ export default function Campaigns() {
                   <dt>Primary KPI</dt>
                   <dd>{c.kpi}</dd>
                 </div>
+                <div>
+                  {c.demo && (
+                    <Link href={c.demo.href} className={styles.demoLink}>
+                      {c.demo.label}
+                      <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <path
+                          d="M3.5 8h9M8.5 4l4 4-4 4"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </Link>
+                  )}
+                </div>
               </dl>
-
-              {c.demo && (
-                <Link href={c.demo.href} className={styles.demoLink}>
-                  {c.demo.label}
-                  <svg viewBox="0 0 16 16" aria-hidden="true">
-                    <path
-                      d="M3.5 8h9M8.5 4l4 4-4 4"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </Link>
-              )}
             </Reveal>
           ))}
         </div>

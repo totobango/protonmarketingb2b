@@ -2,23 +2,23 @@ import Reveal from "./Reveal";
 import styles from "./SectionHead.module.css";
 
 type Props = {
-  eyebrow: string;
   title: string;
   lead?: string;
   align?: "left" | "center";
 };
 
-export default function SectionHead({
-  eyebrow,
-  title,
-  lead,
-  align = "left",
-}: Props) {
+/**
+ * Deliberately has no eyebrow slot. Proton's own sections lead with the serif
+ * heading and let whitespace plus the alternating background do the separating;
+ * a tracked uppercase kicker above every section is the tell we are avoiding.
+ */
+export default function SectionHead({ title, lead, align = "left" }: Props) {
   return (
-    <Reveal className={`${styles.head} ${align === "center" ? styles.center : ""}`}>
-      <p className="eyebrow">{eyebrow}</p>
-      <h2 className={`h2 ${styles.title}`}>{title}</h2>
-      {lead && <p className={`lead ${styles.lead}`}>{lead}</p>}
+    <Reveal
+      className={`${styles.head} ${align === "center" ? styles.center : ""}`}
+    >
+      <h2 className={styles.title}>{title}</h2>
+      {lead && <p className={styles.lead}>{lead}</p>}
     </Reveal>
   );
 }

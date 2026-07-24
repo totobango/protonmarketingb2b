@@ -13,7 +13,7 @@ export default function StartupsDemo() {
       campaign="Your AI sees everything"
       kicker="Proton Workspace for startups"
       title="Your investors trust you with their money. Trust them back with their data."
-      message="The modern workspace for privacy-conscious startups — mail, calendar, drive, docs, meetings, VPN, password manager and a private AI assistant, in one encrypted subscription from €14.99 per user."
+      message="The modern workspace for privacy-conscious startups: mail, calendar, drive, docs, meetings, VPN, password manager and a private AI assistant, in one encrypted subscription from €14.99 per user."
       formTitle="Start a free trial"
       formLead="14 days free. 30-day money-back guarantee if you stay."
       submitLabel="Start free trial"
@@ -35,7 +35,7 @@ export default function StartupsDemo() {
           name: "team",
           label: "Team size",
           type: "select",
-          options: ["1–9", "10–24", "25–49", "50–199", "200+"],
+          options: ["1 to 9", "10 to 24", "25 to 49", "50 to 199", "200+"],
         },
         {
           name: "provider",
@@ -54,7 +54,7 @@ export default function StartupsDemo() {
         {
           title: "The full encrypted suite",
           body:
-            "Mail, Calendar, Drive, Docs, Sheets, Meet, VPN and Pass in one subscription — with 1 TB per user on Standard and 3 TB on Premium. One vendor, one bill, one security model.",
+            "Mail, Calendar, Drive, Docs, Sheets, Meet, VPN and Pass in one subscription, with 1 TB per user on Standard and 3 TB on Premium. One vendor, one bill, one security model.",
         },
         {
           title: "Easy Switch from Google",

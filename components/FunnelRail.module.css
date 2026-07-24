@@ -1,0 +1,106 @@
+.figure {
+  margin: 0 0 40px;
+}
+
+.rail {
+  display: grid;
+  gap: 8px;
+  counter-reset: step;
+}
+
+.rail li {
+  position: relative;
+  display: grid;
+  gap: 3px;
+  padding: 15px 16px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+}
+
+/* Platform-reported stages read quieter than the CRM-owned ones. */
+.platform {
+  background: var(--white);
+}
+
+.crm {
+  background: var(--purple-100);
+  border-color: var(--purple-200);
+}
+
+.stage {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  letter-spacing: -0.02em;
+  color: var(--purple-800);
+}
+
+.metric {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--gray-600);
+}
+
+.callout {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  padding: 3px 9px;
+  border-radius: var(--r-pill);
+  background: var(--purple-800);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 14px;
+}
+
+.keys span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.75rem;
+  color: var(--gray-600);
+}
+
+.keys span::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  border: 1px solid var(--gray-300);
+  background: var(--white);
+}
+
+.keyCrm::before {
+  background: var(--purple-100) !important;
+  border-color: var(--purple-200) !important;
+}
+
+.caption {
+  max-width: 72ch;
+  margin-top: 18px;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: var(--gray-600);
+}
+
+@media (min-width: 700px) {
+  .rail {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+  }
+  .rail li {
+    padding: 16px 13px 15px;
+  }
+  .callout {
+    position: static;
+    justify-self: start;
+    margin-top: 6px;
+  }
+}

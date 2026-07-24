@@ -96,7 +96,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.11);
   font-size: 0.875rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.44);
+  color: rgba(255, 255, 255, 0.58);
 }
 
 .ticker {
@@ -111,11 +111,11 @@
   gap: 10px 16px;
   padding-block: 18px;
   font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.62);
 }
 
 .tickerInner span[aria-hidden] {
-  color: rgba(255, 255, 255, 0.24);
+  color: rgba(255, 255, 255, 0.52);
 }
 
 @media (max-width: 600px) {

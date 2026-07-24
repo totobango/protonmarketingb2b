@@ -70,19 +70,15 @@
 }
 
 .stream {
-  padding: 22px 22px 20px;
-  background: var(--white);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-card), var(--ring-card);
+  padding-top: 18px;
+  border-top: 1px solid var(--gray-200);
 }
 
 .streamLabel {
   margin-bottom: 14px;
   font-family: var(--font-sans);
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--purple-500);
 }
 
@@ -117,16 +113,14 @@
   border-radius: var(--r-md);
   font-size: 0.9375rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.86);
 }
 
 .deliverable span {
   display: block;
   margin-bottom: 6px;
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--cyan-300);
 }
 

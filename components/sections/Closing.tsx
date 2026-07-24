@@ -21,7 +21,7 @@ export default function Closing() {
           <p className={styles.body}>
             The role asks for someone who is comfortable in the campaign manager
             and the budget spreadsheet, and who pushes back on funnels that
-            don&apos;t convert. This site is my argument that I am that person —
+            don&apos;t convert. This site is my argument that I am that person,
             and that I would rather show the work than describe it.
           </p>
 
@@ -43,7 +43,7 @@ export default function Closing() {
           </div>
 
           <p className={styles.sig}>
-            Thomas Germain — {CONTACT.location}, already here.
+            Thomas Germain, {CONTACT.location}, already here.
           </p>
         </Reveal>
       </div>
